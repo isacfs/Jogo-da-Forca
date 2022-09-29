@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <time.h>
 
-/*############# Funções ################*/
+/*############ Funções ################*/
 
 int game_function (char palavra_misteriosa []);
 void clear (void);
