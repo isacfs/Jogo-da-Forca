@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <time.h>
 
-/*######### #### ###########  ################ Funções ############## ###### ###### ##################*/
+/*################## Funções ################*/
 
 int game_function (char palavra_misteriosa []);
 void clear (void);
@@ -22,9 +22,7 @@ int main (void) {
     char palavra_misteriosa [64];
     char game_mode;
 
-    int restart,
-        codigo,
-        teste = 0;
+    int restart, codigo, teste = 0;
 
     do {
         clear ();
@@ -38,7 +36,7 @@ int main (void) {
         printf("\n   #  [ESC] - Exit Game                                                 #");
         printf("\n   #                                                                    #");
         printf("\n   #  Alunos:                                                           #");
-        printf("\n   #  Gustavo Breda, Isac e Landelino                                   #");
+        printf("\n   #  Isac Freire, Gustavo Breda                                        #");
         printf("\n   ######################################################################\n");
 
         printf("\n   # Escolha a opcao: ");
@@ -49,22 +47,28 @@ int main (void) {
 
         switch (game_mode) {
             case '1':
+                FILE *arquivo;
+                arquivo= fopen("teste.txt", "w");
+                fprintf(arquivo, "jogo10000");
+                fclose(arquivo);
+                return 1;
+            /*
                 srand (time (NULL));
                 codigo = (rand () % 20);
                 palavra_sorteada (codigo, palavra_misteriosa);
 
-                restart = game_function (palavra_misteriosa);
+                restart = game_function (palvra_misteriosa);*/
                 break;
 
             case '2':
                 clear ();
                 printf ("Escolha uma palavra para ser descoberta: ");
                 fgets (palavra_misteriosa, 64, stdin);
-
-                if ((strlen (palavra_misteriosa) > 0) && (palavra_misteriosa [strlen (palavra_misteriosa) - 1] == '\n'))
+            
+            /*if ((strlen ("palavra_misteriosa")) > 0) && (palavra_misteriosa [strlen (palavra_misteriosa) - 1] == '\n'))
                     palavra_misteriosa [strlen (palavra_misteriosa) - 1] = '\0';
 
-                restart = game_function (palavra_misteriosa);
+                restart = game_function (palavra_misteriosa);*/
                 break;
 
             case 3:
